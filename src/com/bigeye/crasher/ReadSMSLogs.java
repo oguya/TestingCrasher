@@ -116,7 +116,7 @@ public class ReadSMSLogs extends IntentService{
 				startService(SvcIntent);
 				
 			}
-			
+						
 			//clean up
 			cursor.close();
 			
