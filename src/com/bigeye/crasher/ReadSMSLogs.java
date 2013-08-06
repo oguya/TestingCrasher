@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.widget.Toast;
 
 public class ReadSMSLogs extends IntentService{
 	
@@ -33,11 +34,13 @@ public class ReadSMSLogs extends IntentService{
 		
 		if(smsLogsSynced){
 			Log.i(APP_TAG,"SMS Logs had been synced. Date: "+lastSyncDate);
+//			Toast.makeText(getApplicationContext(),"SMS Logs had been synced. Date: "+lastSyncDate , Toast.LENGTH_LONG).show();
 			
 			Log.i(APP_TAG,"commiting suicide");
 			stopSelf();
 		}else{
 			Log.i(APP_TAG,"SMS Logs have NEVER been synced. Date: "+lastSyncDate);
+//			Toast.makeText(getApplicationContext(),"SMS Logs have NEVER been synced. Date: "+lastSyncDate , Toast.LENGTH_LONG).show();
 			
 			Log.i(APP_TAG,"About to start fetching all SMS logs: standby ");
 			GetSMSLogs();

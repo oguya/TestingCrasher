@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.widget.Toast;
 
 public class ReadCallLogs extends IntentService{
 
@@ -32,11 +33,13 @@ public class ReadCallLogs extends IntentService{
 		
 		if(callLogsSynced){
 			Log.i(APP_TAG,"Call Logs had been synced. Date: "+lastSyncDate);
+//			Toast.makeText(getApplicationContext(),"Call Logs had been synced. Date: "+lastSyncDate , Toast.LENGTH_LONG).show();
 			
 			Log.i(APP_TAG,"commiting suicide");
 			stopSelf();
 		}else{
 			Log.i(APP_TAG,"Call Logs have NEVER been synced. Date: "+lastSyncDate);
+//			Toast.makeText(getApplicationContext(), "Call Logs had been synced. Date: "+lastSyncDate, Toast.LENGTH_LONG).show();
 			
 			//read all call logs
 			Log.i(APP_TAG,"About to start fetching all Call logs: standby ");
